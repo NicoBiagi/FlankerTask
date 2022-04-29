@@ -25,7 +25,7 @@
     /* preload images */
     var preload = {
       type: jsPsychPreload,
-      images: ['img/arrow_left.png', 'img/arrow_right.png', 'img/cong_right.png']
+      images: ['img/arrow_left.png', 'img/arrow_right.png', 'img/cong_right.png', 'img/cong_left.png', 'img/incong_right.png', 'img/incong_left.png']
     };
     timeline.push(preload);
 
@@ -57,18 +57,7 @@
     };
     timeline.push(instructions);
 
-    var practice_stimuli = [
-      { stimulus: "img/cong_right.png",  correct_response: 'ArrowLeft'},
-      { stimulus: "img/cong_right.png",  correct_response: 'ArrowRight'}
-    ];
-
-    /* define trial stimuli array for timeline variables */
-    var test_stimuli = [
-      { stimulus: "img/arrow_left.png",  correct_response: 'ArrowLeft'},
-      { stimulus: "img/arrow_right.png",  correct_response: 'ArrowRight'}
-    ];
-
-    /* define fixation and test trials */
+    /* define fixation */
     var fixation = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: '<div style="font-size:60px;">+</div>',
@@ -79,9 +68,39 @@
       }
     };
 
+    /* define the test in the practice */
+    var prime = {
+      type: jsPsychImageKeyboardResponse,
+      stimulus: jsPsych.timelineVariable('pr_stimuli'),
+      choices: ['ArrowLeft', 'ArrowRight'],
+      trial_duration: 8000,
+      data: {
+        phase: 'practice',
+        task: 'prime',
+        correct_response: jsPsych.timelineVariable('pr_correct_response')
+      },
+      on_finish: function(data){
+        data.correct = jsPsych.pluginAPI.compareKeys(data.prime, data.pr_correct_response);
+      }
+    }
+
+    var practice = {
+      type: jsPsychImageKeyboardResponse,
+      stimulus: jsPsych.timelineVariable('pr_stimuli'),
+      choices: ['ArrowLeft', 'ArrowRight'],
+      trial_duration: 800,
+      data: {
+        task: 'practice_response',
+        correct_response: jsPsych.timelineVariable('pr_correct_response')
+      },
+      on_finish: function(data){
+        data.correct = jsPsych.pluginAPI.compareKeys(data.practice_response, data.pr_correct_response);
+      }
+    };
+
     var test = {
       type: jsPsychImageKeyboardResponse,
-      stimulus: jsPsych.timelineVariable('stimulus'),
+      stimulus: test_stimuli,
       choices: ['ArrowLeft', 'ArrowRight'],
       trial_duration: 800,
       data: {
@@ -106,21 +125,6 @@
             }
         },
         trial_duration: 1000
-    }
-
-    var feedback = {
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: function() {
-
-        var trials = jsPsych.data.get().filter({task: 'response'});
-        var correct_trials = trials.filter({correct: true});
-        var rt = Math.round(correct_trials.select('rt').mean());
-
-        return `<p>You responded correctly on ${accuracy}% of the trials.</p>
-          <p>Your average response time was ${rt}ms.</p>
-          <p>Press any key to complete the experiment. Thank you!</p>`;
-
-      }
     };
 
     var blank = {
@@ -133,36 +137,44 @@
         }
     };
 
- 
+    var practice_procedure = {
+      timeline: [fixation, prime],
+      timeline_variables: [
+        { pr_stimuli: "img/cong_left.png",  pr_correct_response: 'ArrowLeft'},
+        { pr_stimuli: "img/cong_right.png",  pr_correct_response: 'ArrowRight'},
+        { pr_stimuli: "img/incong_left.png", pr_correct_response: 'ArrowLeft'},
+        { pr_stimuli: "img/incong_right.png",  pr_correct_response: 'ArrowRight'}
+      ],
+      data: {
+        phase: 'practice'
+      },
+      randomize_order: true
+    };
+    timeline.push(practice_procedure);
 
-    /* define test procedure */
+    var start_task = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: `
+        <p>You have completed the practice trial.</p>
+        <p>Press any key to begin.</p>
+      `,
+      post_trial_gap: 1000
+    };
+    timeline.push(start_task);
+
+    /* define test procedure 
     var test_procedure = {
       //timeline: [fixation, test, outcome, feedback, blank],
       timeline: [fixation, test, outcome, blank],
       timeline_variables: test_stimuli,
-      repetitions: 5,
-      randomize_order: true
+      data: {
+        phase: 'test'
+      },
+      repetitions: 1,
+      randomize_order: false
     };
     timeline.push(test_procedure);
-
-
-    /* define debrief */
-    var debrief_block = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: function() {
-
-        var trials = jsPsych.data.get().filter({task: 'response'});
-        var correct_trials = trials.filter({correct: true});
-        var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
-        var rt = Math.round(correct_trials.select('rt').mean());
-
-        return `<p>You responded correctly on ${accuracy}% of the trials.</p>
-          <p>Your average response time was ${rt}ms.</p>
-          <p>Press any key to complete the experiment. Thank you!</p>`;
-
-      }
-    };
-    timeline.push(debrief_block);
+    */
 
     /* start the experiment */
     jsPsych.run(timeline);

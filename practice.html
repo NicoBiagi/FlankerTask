@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My practice</title>
+    <script src="https://unpkg.com/jspsych@7.2.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
+    <script src="stimuli.js"></script>
+    <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body></body>
+<script>
+
+    /* initialize jsPsych */
+    var jsPsych = initJsPsych({
+        on_finish: function () {
+            jsPsych.data.displayData();
+        }
+    });
+
+    /* create timeline */
+    var timeline = [];
+
+    /* preload images */
+    var preload = {
+        type: jsPsychPreload,
+        images: ['img/arrow_left.png', 'img/arrow_right.png', 'img/cong_right.png', 'img/cong_left.png', 'img/incong_right.png', 'img/incong_left.png']
+    };
+    timeline.push(preload);
+
+    /* define welcome message trial */
+    var welcome = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "Welcome to the experiment. Press any key to begin."
+    };
+    timeline.push(welcome);
+
+    /* define instructions trial */
+    var instructions = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: `
+        <p>In this experiment, five arrows will appear in the center 
+        of the screen.</p><p>If the central arrow is <strong>pointing left</strong>, 
+        press the left arrow key on the keyboard as fast as you can.</p>
+        <p>If the central arrow is <strong>pointing right</strong>, press the right arrow key 
+        as fast as you can.</p>
+        <div style='width: 700px;'>
+        <div style='float: left;'><img src='img/arrow_left.png'></img>
+        <p class='small'><strong>Press the left arrow key</strong></p></div>
+        <div style='float: right;'><img src='img/arrow_right.png'></img>
+        <p class='small'><strong>Press the right arrow key</strong></p></div>
+        </div>
+        <p>Press any key to begin.</p>
+      `,
+        post_trial_gap: 2000
+    };
+    timeline.push(instructions);
+
+    /* define fixation */
+    var fixation = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<div style="font-size:60px;">+</div>',
+        choices: "NO_KEYS",
+        trial_duration: 500,
+        data: {
+            task: 'fixation'
+        }
+    };
+
+    var practice_stimuli = [
+        { pr_stimuli: "img/cong_left.png", pr_correct_response: 'ArrowLeft' },
+        { pr_stimuli: "img/cong_right.png", pr_correct_response: 'ArrowRight' },
+        { pr_stimuli: "img/incong_left.png", pr_correct_response: 'ArrowLeft' },
+        { pr_stimuli: "img/incong_right.png", pr_correct_response: 'ArrowRight' }
+    ];
+
+    var test = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('pr_stimuli'),
+        choices: ['ArrowLeft', 'ArrowRight'],
+        data: {
+            task: 'practice_response',
+            correct_response: jsPsych.timelineVariable('pr_correct_response')
+        },
+        on_finish: function (data) {
+            data.practice_correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct_response);
+        }
+    };
+
+    var test_procedure = {
+        timeline: [fixation, test],
+        timeline_variables: practice_stimuli,
+        randomize_order: true
+    };
+    timeline.push(test_procedure);
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
+</script>
+
+</html>
