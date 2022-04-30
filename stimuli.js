@@ -2,281 +2,601 @@ var test_stimuli = [
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.013735742,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.040234372,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.078524044,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.12856489,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.13428139,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.18691004,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.203211476,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.212705631,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.244894815,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.246830619,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.27777124,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.279889845,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.309943564,
-    "": 1
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.310220779,
-    "": 2
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.367633463,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.441379462,
-    "": 1
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.462596395,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.496187121,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.498800562,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.505984425,
-    "": 1
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.515820008,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.556167183,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.609323761,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.610814724,
-    "": 1
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.616316745,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.630493533,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.631327636,
-    "": 1
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.663833371,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.665212597,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.705920636,
-    "": 1
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.720898234,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.729204413,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.733338048,
-    "": 1
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.747057707,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.775165996,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.8104268,
-    "": 1
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.853049056,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/incong_left.png",
-    "correct_response": "ArrowLeft",
-    "random": 0.905430223,
-    "": 0
+    "correct_response": "ArrowLeft"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.957619001,
-    "": 0
+    "correct_response": "ArrowRight"
   },
   {
     "block": "neutral",
     "stimulus": "img/cong_right.png",
-    "correct_response": "ArrowRight",
-    "random": 0.99000205,
-    "": 1
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "negative",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_left.png",
+    "correct_response": "ArrowLeft"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/cong_right.png",
+    "correct_response": "ArrowRight"
+  },
+  {
+    "block": "positive",
+    "stimulus": "img/incong_right.png",
+    "correct_response": "ArrowRight"
   }
 ]

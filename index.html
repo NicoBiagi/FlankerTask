@@ -78,6 +78,7 @@
         type: jsPsychImageKeyboardResponse,
         stimulus: jsPsych.timelineVariable('stimulus'),
         choices: ['ArrowLeft', 'ArrowRight'],
+        trial_duration: 800,
         data: {
             task: 'flanker',
             correct_response: jsPsych.timelineVariable('correct_response')
@@ -133,14 +134,82 @@
         post_trial_gap: 1000
     };
 
-    var test_procedure = {
+    var neutral_stimuli = test_stimuli.filter(item => {
+        return item.block === `neutral`;
+    });
+
+    var positive_stimuli = test_stimuli.filter(item => {
+        return item.block === `positive`;
+    });
+
+    var negative_stimuli = test_stimuli.filter(item => {
+        return item.block === `negative`;
+    });
+
+    var test_neutral_with_feedback = {
         timeline: [fixation, test, outcome, blank],
-        timeline_variables: test_stimuli,
+        timeline_variables: neutral_stimuli,
         data: {
             phase: 'test',
-            
+            block: 'neutral_with_feedback'
+
         },
-        randomize_order: true
+        randomize_order: false
+
+    };
+
+    var test_neutral_without_feedback = {
+        timeline: [fixation, test, blank, blank],
+        timeline_variables: neutral_stimuli,
+        data: {
+            phase: 'test',
+            block: 'neutral'
+
+        },
+        randomize_order: false
+
+    };
+
+    var test_negative_with_feedback = {
+        timeline: [fixation, test, outcome, blank],
+        timeline_variables: negative_stimuli,
+        data: {
+            phase: 'test',
+            block: 'negative_with_feedback'
+
+        },
+        randomize_order: false
+    };
+
+    var test_positive_with_feedback = {
+        timeline: [fixation, test, outcome, blank],
+        timeline_variables: positive_stimuli,
+        data: {
+            phase: 'test',
+            block: 'positive_with_feedback'
+
+        },
+        randomize_order: false
+    };
+
+
+    var likert_scale = [
+        "Strongly Disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly Agree"
+    ];
+
+    var trial = {
+        type: jsPsychSurveyLikert,
+        preamble: "<h1>ID-EC</h1><div>Please report how you generally feel regarding each statement below on the following 5-point frequency scale</div>",
+        questions: [
+            { prompt: "I like vegetables.", name: 'Vegetables', labels: likert_scale },
+            { prompt: "I like fruit.", name: 'Fruit', labels: likert_scale },
+            { prompt: "I like meat.", name: 'Meat', labels: likert_scale },
+        ],
+        randomize_question_order: false
     };
 
     /* create the end screen */
@@ -168,7 +237,12 @@
     timeline.push(instructions);
     timeline.push(practice_procedure);
     timeline.push(start_task);
-    timeline.push(test_procedure);
+    timeline.push(test_neutral_with_feedback);
+    timeline.push(trial);
+    timeline.push(test_negative_with_feedback);
+    timeline.push(trial);
+    timeline.push(test_positive_with_feedback);
+    timeline.push(trial);
     timeline.push(end);
 
     /* start the experiment */

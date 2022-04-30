@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <title>Survey</title>
+    <script src="https://unpkg.com/jspsych@7.2.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
+    <script src="stimuli.js"></script>
+    <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="min-height: 100vh;">
+    <div id="jspsych-target" style="min-height: 100vh; width: 100%; margin: 0;"></div>
+</body>
+
+<script>
+
+    var task_name = "uw_surveys";
+    console.log(task_name);
+
+
+    if (jsPsych.data.getURLVariable('pid') == "test") {
+        var id = "debug_" + jsPsych.randomization.randomID(5)
+        var debug = true;
+    } else if (jsPsych.data.getURLVariable('pid')) {
+        var id = jsPsych.data.getURLVariable('pid');
+    } else {
+        alert("Oops, we don't have an id for you. Please check that you have copied the link correctly and try again.")
+    }
+
+    function saveData(filename, filedata) {
+        $.ajax({
+            type: 'post',
+            cache: false,
+            url: 'save_data.php', // this is the path to the above PHP script (needs to be in the same foler as the script)
+            data: {
+                filename: filename,
+                filedata: filedata
+            }
+        });
+    }
+
+    var thanks = {
+        type: "instructions",
+        pages: ["Thank you for finishing the survey part of the study.<br>Please press next to continue to the game.<br>This may take a little while to load, so please be patient."],
+        show_clickable_nav: true
+    }
+
+    jsPsych.init({
+        timeline: [info_sheet, consent, demo, ID_EC_survey, IUS_survey, thanks],
+        display_element: 'jspsych-target',
+        on_trial_finish: function () {
+            window.scrollTo(0, 0);
+            saveData(task_name + "_" + id + "_" + jsPsych.startTime() + ".csv", jsPsych.data.get().csv());
+            jsPsych.data.addProperties({
+                start_time: jsPsych.startTime(),
+                id: id
+            });
+        },
+        on_finish: function () {
+            window.location.href = "buttons_a.html?pid=" + id;
+        }
+    })
+</script>
+
+</html>
