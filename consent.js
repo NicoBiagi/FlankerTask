@@ -1,10 +1,10 @@
 var consent = {
     type: jsPsychSurveyHtmlForm,
     preamble: "<img scr ='https://research.reading.ac.uk/centre-for-book-cultures-and-publishing/wp-content/themes/reading-research/img/logo-Reading.png'>"+
-              "<h1>Consent form: Uncertain World</h1><br>"+
+              "<h1>Consent form: Jayne's Study</h1><br>"+
               "<div style='text-align: left; width:80%; margin:auto;'><p>Thank you for supporting our project. On the next few pages you will be asked to answer a series of questions about yourself. In total it should take about 5-10 minutes to complete the questions. At the end of the questionnaire responses, you will begin the online game. You will need to complete both parts of the study together. Please do not close the browser window once you have started as your progress will be lost.</p>"+
               "<p>Many thanks,</p>"+
-              "<p>Zoe</p>"+
+              "<p>Nico</p>"+
               "<p><a href='mailto:z.j.ryan@pgr.reading.ac.uk'>(z.j.ryan@pgr.reading.ac.uk)</a><br><br></div>",
     html:
     '<div style="text-align: left; width:80%; margin:auto;">'+

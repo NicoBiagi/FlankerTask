@@ -6,8 +6,13 @@
     <script src="https://unpkg.com/jspsych@7.2.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.0/dist/index.browser.min.js"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/extension-webgazer@1.0.0"></script>
+    <script src="webgazer.js"></script>
     <script src="stimuli.js"></script>
+    <script src="webcam.js"></script>
     <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,25 +21,54 @@
 
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
+        extensions: [
+            { type: jsPsychExtensionWebgazer },
         on_finish: function () {
-            jsPsych.data.displayData();
-        }
+                jsPsych.data.displayData();
+            }
     });
 
     /* create timeline */
     var timeline = [];
+
+    var ID = [];
+
+    var videoStorage = [] // a place to store the webscam recordings
 
     /* preload images */
     var preload = {
         type: jsPsychPreload,
         images: ['img/arrow_left.png', 'img/arrow_right.png', 'img/cong_right.png', 'img/cong_left.png', 'img/incong_right.png', 'img/incong_left.png']
     };
+    timeline.push(preload);
+
 
     /* define welcome message trial */
     var welcome = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: "Welcome to the experiment. Press any key to begin."
     };
+    timeline.push(welcome);
+
+    /*     letter_survey = {
+            type: jsPsychSurveyText,
+            questions: [
+                { prompt: "What is your favorite letter?", name: "favorite" }
+            ],
+            data: {
+                task: 'ID'
+            },
+            on_finish: function (data) {
+                ID = jsPsych.data.get().last(1).trials[0].response.favorite;
+            },
+        };
+        timeline.push(letter_survey);
+    
+        letter_display = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: 'ID'
+        };
+        timeline.push(letter_display); */
 
     /* define instructions trial */
     var instructions = {
@@ -232,8 +266,7 @@
     };
 
 
-    timeline.push(preload);
-    timeline.push(welcome);
+
     timeline.push(instructions);
     timeline.push(practice_procedure);
     timeline.push(start_task);

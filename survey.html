@@ -1,5 +1,4 @@
-<!doctype html>
-<meta charset="UTF-8">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,18 +9,32 @@
     <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
-    <script src="stimuli.js"></script>
+    <script src="IUS.js"></script>
+    <script src="consent.js"></script>
     <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body style="min-height: 100vh;">
-    <div id="jspsych-target" style="min-height: 100vh; width: 100%; margin: 0;"></div>
-</body>
+<body></body>
 
 <script>
 
+    /* initialize jsPsych */
+    var jsPsych = initJsPsych({
+        on_finish: function () {
+            jsPsych.data.displayData();
+        }
+    });
+
+    /* create timeline */
+    var timeline = [];
+
     var task_name = "uw_surveys";
     console.log(task_name);
+
+    var welcome = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "Welcome to the experiment. Press any key to begin."
+    };
 
 
     if (jsPsych.data.getURLVariable('pid') == "test") {
@@ -52,7 +65,7 @@
     }
 
     jsPsych.init({
-        timeline: [info_sheet, consent, demo, ID_EC_survey, IUS_survey, thanks],
+        timeline: [info_sheet, consent, demo, , IUS_survey, thanks],
         display_element: 'jspsych-target',
         on_trial_finish: function () {
             window.scrollTo(0, 0);
@@ -66,6 +79,14 @@
             window.location.href = "buttons_a.html?pid=" + id;
         }
     })
+
+    timeline.push(welcome);
+    timeline.push(consent);
+    timeline.push(IUS_survey);
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
 </script>
 
 </html>
