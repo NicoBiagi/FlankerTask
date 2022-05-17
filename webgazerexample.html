@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://unpkg.com/jspsych@7.0.0"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.0.0"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.0.0"></script>
+    <script src="https://unpkg.com/jspsych@7.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-webgazer-init-camera@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-webgazer-calibrate@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-webgazer-validate@1.0.0"></script>
-    <script src="webgazer.js"></script>
     <script src="https://unpkg.com/@jspsych/extension-webgazer@1.0.0"></script>
+    <script src="webgazer.js"></script>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/jspsych@7.0.0/css/jspsych.css"
+      href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css"
     />
     <style>
       .jspsych-btn {
@@ -32,7 +32,7 @@
 
       var preload = {
         type: jsPsychPreload,
-        images: ['img/blue.png']
+        images: ['img/arrow_left.png']
       }
 
       var camera_instructions = {
@@ -125,7 +125,7 @@
       }
 
       var begin = {
-        type: jsPsychHtmlKeyboardResponse,
+        type: jsPsychHtmlButtonResponse,
         stimulus: `<p>The next screen will show an image to demonstrate adding the webgazer extension to a trial.</p>
           <p>Just look at the image while eye tracking data is collected. The trial will end automatically.</p>
           <p>Press any key to start.</p>
@@ -134,7 +134,7 @@
 
       var trial = {
         type: jsPsychImageKeyboardResponse,
-        stimulus: 'img/blue.png',
+        stimulus: 'img/arrow_left.png',
         choices: "NO_KEYS",
         trial_duration: 2000,
         extensions: [
@@ -146,7 +146,7 @@
       }
 
       var show_data = {
-        type: jsPsychHtmlKeyboardResponse,
+        type: jsPsychHtmlButtonResponse,
         stimulus: function() {
           var trial_data = jsPsych.data.getLastTrialData().values();
           var trial_json = JSON.stringify(trial_data, null, 2);

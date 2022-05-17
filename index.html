@@ -22,11 +22,15 @@
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
         extensions: [
-            { type: jsPsychExtensionWebgazer },
+            { type: jsPsychExtensionWebgazer }],
         on_finish: function () {
-                jsPsych.data.displayData();
-            }
+            jsPsych.data.displayData();
+        }
     });
+
+    var init_camera_trial = {
+        type: jsPsychWebgazerInitCamera
+    };
 
     /* create timeline */
     var timeline = [];
@@ -49,6 +53,12 @@
         stimulus: "Welcome to the experiment. Press any key to begin."
     };
     timeline.push(welcome);
+
+    var calibration_trial = {
+        type: jsPsychWebgazerCalibrate,
+        calibration_points: [[25, 50], [50, 50], [75, 50], [50, 25], [50, 75]],
+        calibration_mode: 'click'
+    };
 
     /*     letter_survey = {
             type: jsPsychSurveyText,
@@ -126,12 +136,12 @@
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function (data) {
             if (jsPsych.data.get().last(1).trials[0].correct == true) {
-                return "right"
+                return "CORRECT"
             } else if (jsPsych.data.get().last(1).trials[0].response == null) {
-                return "missed"
+                return "MISSED"
             }
             else {
-                return "wrong"
+                return "INCORRECT"
             }
         },
         trial_duration: 1000,
