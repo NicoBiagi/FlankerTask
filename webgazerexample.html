@@ -125,7 +125,7 @@
       }
 
       var begin = {
-        type: jsPsychHtmlButtonResponse,
+        type: jsPsychHtmlKeyboardResponse,
         stimulus: `<p>The next screen will show an image to demonstrate adding the webgazer extension to a trial.</p>
           <p>Just look at the image while eye tracking data is collected. The trial will end automatically.</p>
           <p>Press any key to start.</p>
@@ -133,7 +133,7 @@
       }
 
       var trial = {
-        type: jsPsychImageKeyboardResponse,
+        type: jsPsychHtmlButtonResponse,
         stimulus: 'img/arrow_left.png',
         choices: "NO_KEYS",
         trial_duration: 2000,
