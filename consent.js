@@ -4,13 +4,13 @@ var consent = {
               "<h1>Consent form: Jayne's Study</h1><br>"+
               "<div style='text-align: left; width:80%; margin:auto;'><p>Thank you for supporting our project. On the next few pages you will be asked to answer a series of questions about yourself. In total it should take about 5-10 minutes to complete the questions. At the end of the questionnaire responses, you will begin the online game. You will need to complete both parts of the study together. Please do not close the browser window once you have started as your progress will be lost.</p>"+
               "<p>Many thanks,</p>"+
-              "<p>Nico</p>"+
-              "<p><a href='mailto:z.j.ryan@pgr.reading.ac.uk'>(z.j.ryan@pgr.reading.ac.uk)</a><br><br></div>",
+              "<p>Jayne</p>"+
+              "<p><a href='mailto:j.e.morriss@reading.ac.uk'>(j.e.morriss@reading.ac.uk)</a><br><br></div>",
     html:
     '<div style="text-align: left; width:80%; margin:auto;">'+
     '<div style="">'+
       '<input type="checkbox" id="consent1" name="consent1" required>'+
-        '<label for="consent1"> I agree to participate in this study being conducted by Zoe Ryan, Dr Jayne Morriss, Professor Helen Dodd and Dr Lily Fitzgibbon at the University of Reading.</label><br><br>'+
+        '<label for="consent1"> I agree to participate in this study being conducted by Nico Biagi, Dr Jayne Morriss, Professor Helen Dodd at the University of Reading.</label><br><br>'+
       '<input type="checkbox" id="consent2" name="consent2" required>'+
         '<label for="consent2"> I have seen and read a copy of the Information Sheet and have been given the opportunity to ask questions about the study and these have been answered to my satisfaction.  </label><br><br>'+
       '<input type="checkbox" id="consent3" name="consent3" required>'+
