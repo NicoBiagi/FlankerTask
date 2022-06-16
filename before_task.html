@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Before Task</title>
+    <script src="js/jquery.min.js"></script>
+    <!-- Make sure that these paths direct to the files correctly -->
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-likert.js"></script>
+    <script src="plugins/jspsych-survey-multi-select.js"></script>
+    <script src="plugins/jspsych-survey-html-form.js"></script>
+    <script src="webgazer.js"></script>
+    <script src="stimuli.js"></script>
+    <script src="webcam.js"></script>
+    <script src="consent.js"></script>
+    <script src="info_sheet.js"></script>
+
+    <link rel="stylesheet" href="css/jspsych.css"></link>
+    <link rel="stylesheet" href="css/jquery-ui.css"></link>
+</head>
+
+<body></body>
+<script>
+var thanks = {
+  type: "instructions",
+  pages: ["Thank you for finishing the survey part of the study.<br>Please press next to continue to the game.<br>This may take a little while to load, so please be patient."],
+  show_clickable_nav: true
+}
+
+jsPsych.init({
+  timeline: [info_sheet, consent, thanks],
+  display_element: 'jspsych-target',
+  on_trial_finish: function() {
+    window.scrollTo(0, 0);
+    saveData(task_name + "_" + id + "_" + jsPsych.startTime() + ".csv", jsPsych.data.get().csv());
+    jsPsych.data.addProperties({
+      start_time: jsPsych.startTime(),
+      id: id
+    });
+  },
+  on_finish: function() {
+    window.location.href = "index.html";
+  }
+})
+</script>
+</html>
