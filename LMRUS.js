@@ -6,7 +6,7 @@ var likert_scale_second_questionnaire = [
     "Entirely characteristic of me"
   ];
   
-  var second_survey = {
+  var LMRUS = {
     type: jsPsychSurveyLikert,
      preamble: "<h1>IUS</h1><div>You will find below a series of statements which describe how people may react to the uncertainties of life. Please use the scale below to describe to what extent each item is characteristic of you.</div>",
     questions: [
