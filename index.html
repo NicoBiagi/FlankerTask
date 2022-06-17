@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0/dist/index.browser.min.js"></script>
     <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.0/dist/index.browser.min.js"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.1/dist/index.browser.min.js"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.0/dist/index.browser.min.js"></script>
     <script src="https://unpkg.com/@jspsych/extension-webgazer@1.0.0"></script>
@@ -25,6 +26,7 @@
     <script src="IUS.js"></script>
     <script src="second_questionnaire.js"></script>
     <script src="Mini_MASQ.js"></script>
+    <script src="demographics.js"></script>
     <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -423,8 +425,11 @@ Throughout the task please try to maintain attention to the screen and to respon
 
 
     timeline.push(welcome);
+    timeline.push(demographics_text);
+    timeline.push(demographics_choice);
     timeline.push(info_sheet);
     timeline.push(debrief_sheet);
+
     timeline.push(consent);
     timeline.push(MASQ_survey);
     timeline.push(IUS_survey);
