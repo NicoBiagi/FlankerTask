@@ -21,6 +21,10 @@
     <script src="webcam.js"></script>
     <script src="consent.js"></script>
     <script src="info_sheet.js"></script>
+    <script src="debrief_sheet.js"></script>
+    <script src="IUS.js"></script>
+    <script src="second_questionnaire.js"></script>
+    <script src="Mini_MASQ.js"></script>
     <link href="https://unpkg.com/jspsych@7.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -44,8 +48,6 @@
     var timeline = [];
 
     var ID = [];
-
-    var videoStorage = [] // a place to store the webscam recordings
 
     /* preload images */
     var preload = {
@@ -175,7 +177,18 @@
     var instructions = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `
-        <p>In this experiment, five arrows will appear in the center 
+        <p>In this task you will view blocks of trials with arrow stimuli. In each block of trials you will receive information at the top of the screen telling you whether you can win or lose more voucher money, depending on how you perform. In some blocks of trials you cannot win or lose voucher money. 
+      
+
+In each trial, you will need to identify what direction the centre arrow stimulus is pointing (e.g. either left or right). Sometimes you will receive feedback as to how you are performing (e.g. after you give a response, a text display will tell you if you got the trial “correct” or “incorrect”). Sometimes you won’t receive any feedback as to how you are performing (e.g. after you give a response, a “?” will appear).
+
+At the end of each block of trials you will need to complete some ratings of how you felt during the block. The total voucher money you win will be calculated across the task and will be revealed at the end of the task. 
+
+Throughout the task please try to maintain attention to the screen and to respond as quickly as you can using the keyboard. The trial will move on if you do not respond quickly enough.
+
+          
+          
+          In this experiment, five arrows will appear in the center 
         of the screen.</p><p>If the central arrow is <strong>pointing left</strong>, 
         press the left arrow key on the keyboard as fast as you can.</p>
         <p>If the central arrow is <strong>pointing right</strong>, press the right arrow key 
@@ -411,7 +424,11 @@
 
     timeline.push(welcome);
     timeline.push(info_sheet);
+    timeline.push(debrief_sheet);
     timeline.push(consent);
+    timeline.push(MASQ_survey);
+    timeline.push(IUS_survey);
+    timeline.push(second_survey);
     timeline.push(camera_instructions);
     timeline.push(init_camera);
     timeline.push(calibration_instructions);
