@@ -358,26 +358,6 @@
         randomize_order: false
     };
 
-
-    var likert_scale = [
-        "Strongly Disagree",
-        "Disagree",
-        "Neutral",
-        "Agree",
-        "Strongly Agree"
-    ];
-
-    var trial = {
-        type: jsPsychSurveyLikert,
-        preamble: "<h1>ID-EC</h1><div>Please report how you generally feel regarding each statement below on the following 5-point frequency scale</div>",
-        questions: [
-            { prompt: "I like vegetables.", name: 'Vegetables', labels: likert_scale },
-            { prompt: "I like fruit.", name: 'Fruit', labels: likert_scale },
-            { prompt: "I like meat.", name: 'Meat', labels: likert_scale },
-        ],
-        randomize_question_order: false
-    };
-
     /* create the end screen */
 
     var done = {
@@ -386,10 +366,10 @@
       stimulus: `<p>Done!</p><p>If you'd like to download a copy of the data to explore, click the format you'd like below</p>`,
       on_finish: function(data){
         if(data.response == 0){
-          jsPsych.data.get().localSave('csv','webgazer-sample-data.csv');
+          jsPsych.data.get().localSave('csv','FlakerTask-data.csv');
         }
         if(data.response == 1){
-          jsPsych.data.get().localSave('json', 'webgazer-sample-data.json');
+          jsPsych.data.get().localSave('json', 'FlakerTask-data.json');
         }
       }
     };
