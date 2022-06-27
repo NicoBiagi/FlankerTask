@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>My practice</title>
+    <title>Individual differences in affective responses</title>
     <script src="https://unpkg.com/jspsych@7.2.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.0"></script>
     <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.0"></script>
@@ -41,6 +41,12 @@
             jsPsych.data.displayData();
         }
     });
+
+    var enter_fullscreen = {
+      type: jsPsychFullscreen,
+      fullscreen_mode: true
+    };
+
 
     var init_camera_trial = {
         type: jsPsychWebgazerInitCamera
