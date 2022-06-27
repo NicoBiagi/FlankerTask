@@ -1,7 +1,6 @@
 var demographics_text = {
     type: jsPsychSurveyText,
     questions: [
-      {prompt: 'Participant number:', name: 'ParticipantID', required: true},
       {prompt: 'What is your date of birth?', name: 'DOB', placeholder: 'mm/dd/yyyy'},
       {prompt: 'Sex:', name: 'Sex'},
       {prompt: 'Ethnicity:', name: 'Ethnicity'},
