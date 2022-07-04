@@ -281,6 +281,24 @@
 
     };
 
+    var negative_block ={
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "You can lose voucher money in this block",
+
+    };
+
+    var positive_block ={
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "You can win voucher money in this block",
+
+    };
+
+    var neutral_block ={
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "You can’t win or lose any voucher money in this block",
+
+    };
+
     var practice_procedure = {
         timeline: [fixation, test, outcome, blank],
         timeline_variables: practice_stimuli,
@@ -434,20 +452,20 @@
     timeline.push(enter_fullscreen);
     timeline.push(welcome);
 
-    // CONSENT FORMS and INSTRUCTIONS
-    timeline.push(info_sheet);
-    timeline.push(consent);
-    timeline.push(instructions);
+    // // CONSENT FORMS and INSTRUCTIONS
+    // timeline.push(info_sheet);
+    // timeline.push(consent);
+    // timeline.push(instructions);
 
-    // EYE TRACKER
-    timeline.push(camera_instructions);
-    timeline.push(init_camera);
-    timeline.push(calibration_instructions);
-    timeline.push(calibration);
-    timeline.push(validation_instructions);
-    timeline.push(validation);
-    timeline.push(recalibrate);
-    timeline.push(calibration_done);
+    // // EYE TRACKER
+    // timeline.push(camera_instructions);
+    // timeline.push(init_camera);
+    // timeline.push(calibration_instructions);
+    // timeline.push(calibration);
+    // timeline.push(validation_instructions);
+    // timeline.push(validation);
+    // timeline.push(recalibrate);
+    // timeline.push(calibration_done);
 
     // PRACTICE TRIAL 
     timeline.push(practice_procedure);
@@ -456,31 +474,37 @@
     timeline.push(start_task);
 
     // NEUTRAL NO FEEDBACL
+    timeline.push(neutral_block);
     timeline.push(test_neutral_without_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
     // NEGATIVE WITH FEEDBACK
+    timeline.push(negative_block);
     timeline.push(test_negative_with_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
     // POSITIVE NO FEEDBACK
+    timeline.push(positive_block);
     timeline.push(test_positive_without_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
     // NEUTRAL WITH FEEDBACK
+    timeline.push(neutral_block);
     timeline.push(test_neutral_with_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
     // POSITIVE WITH FEEDBACK
+    timeline.push(positive_block);
     timeline.push(test_positive_with_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
     // NEGATIVE WITHOUT FEEDBACK
+    timeline.push(negative_block);
     timeline.push(test_negative_without_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);

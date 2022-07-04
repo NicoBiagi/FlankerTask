@@ -1,35 +1,47 @@
 var valence_scale = [
-    "Strongly Disagree", 
-    "Disagree", 
-    "Neutral", 
-    "Agree", 
-    "Strongly Agree"
+    "Negative 1", 
+    "2", 
+    "3", 
+    "4", 
+    "5",
+    "6",
+    "7",
+    "8",
+    "Positive 9"
   ];
 
 var arousal_scale = [
-    "Strongly Disagree", 
-    "Disagree", 
-    "Neutral", 
-    "Agree", 
-    "Strongly Agree"
+  "Calm 1", 
+  "2", 
+  "3", 
+  "4", 
+  "5",
+  "6",
+  "7",
+  "8",
+  "Excited 9"
   ];
   
 
 var end_questions = {
     type: jsPsychSurveyLikert,
     questions: [
-      {prompt: "Use the scale below to indicate how you are currently feeling", name: 'Valence', labels: valence_scale, required: true},
-      {prompt: "Use the scale below to indicate the intensity you are currently feeling", name: 'Arousal', labels: arousal_scale, required: true},
+      {prompt: "How did you feel during the last block of trials?", name: 'Valence', labels: valence_scale, required: true},
+      {prompt: "How did you feel during the last block of trials?", name: 'Arousal', labels: arousal_scale, required: true},
     ],
     randomize_question_order: false
 };
 
 var emotion_scale =[
-    "Strongly Disagree", 
-    "Disagree", 
-    "Neutral", 
-    "Agree", 
-    "Strongly Agree"
+  "1", 
+  "2", 
+  "3", 
+  "4", 
+  "5",
+  "6",
+  "7",
+  "8",
+  "9"
 ];
 
 var emotions_questions ={
