@@ -293,6 +293,11 @@
 
     };
 
+    var practice_instructions = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "You will now be presented with a few practice trials"
+    };
+
     var neutral_block ={
         type: jsPsychHtmlKeyboardResponse,
         stimulus: "You can’t win or lose any voucher money in this block",
@@ -452,22 +457,23 @@
     timeline.push(enter_fullscreen);
     timeline.push(welcome);
 
-    // // CONSENT FORMS and INSTRUCTIONS
-    // timeline.push(info_sheet);
-    // timeline.push(consent);
-    // timeline.push(instructions);
+    // CONSENT FORMS and INSTRUCTIONS
+    timeline.push(info_sheet);
+    timeline.push(consent);
+    timeline.push(instructions);
 
-    // // EYE TRACKER
-    // timeline.push(camera_instructions);
-    // timeline.push(init_camera);
-    // timeline.push(calibration_instructions);
-    // timeline.push(calibration);
-    // timeline.push(validation_instructions);
-    // timeline.push(validation);
-    // timeline.push(recalibrate);
-    // timeline.push(calibration_done);
+    // EYE TRACKER
+    timeline.push(camera_instructions);
+    timeline.push(init_camera);
+    timeline.push(calibration_instructions);
+    timeline.push(calibration);
+    timeline.push(validation_instructions);
+    timeline.push(validation);
+    timeline.push(recalibrate);
+    timeline.push(calibration_done);
 
     // PRACTICE TRIAL 
+    timeline.push(practice_instructions);
     timeline.push(practice_procedure);
     
     // START TASK
