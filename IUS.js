@@ -1,9 +1,9 @@
 var likert_scale_IUS = [
-    "Not at all characteristic of me",
-    " ",
-    "Somewhat characteristic of me",
-    " ",
-    "Entirely characteristic of me"
+  "Not at all characteristic of me",
+  "A little characteristic of me",
+  "Somewhat characteristic of me",
+  "Very characteristic of me",
+  "Entirely characteristic of me"
   ];
   
   var IUS_survey = {
