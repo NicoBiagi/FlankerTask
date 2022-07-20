@@ -38,6 +38,12 @@
             position:relative;
         };
 
+        .outcome_qm{
+            font-size: 20px; 
+            font-weight: bold; 
+            position:relative;
+        };
+
     </style>
 </head>
 
@@ -187,7 +193,7 @@
     var instructions = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `
-        <p>In this task you will view blocks of trials with arrow stimuli. In each block of trials you will receive information at the top of the screen telling you whether you can win or lose more voucher money, depending on how you perform.</p><p>In some blocks of trials you cannot win or lose voucher money.</p>
+        <p>In this task you will view blocks of trials with arrow stimuli. Before each block of trials you will receive information telling you whether you can win or lose more voucher money, depending on how you perform.</p><p>In some blocks of trials you cannot win or lose voucher money.</p>
         <p>In each trial, you will need to identify what direction the centre arrow stimulus is pointing (e.g. either left or right).</p><p>Sometimes you will receive feedback as to how you are performing (e.g. after you give a response, a text display will tell you if you got the trial “correct” or “incorrect”).</p><p>Sometimes you won’t receive any feedback as to how you are performing (e.g. after you give a response, a “?” will appear).</p>
         <p>At the end of each block of trials you will need to complete some ratings of how you felt during the block. The total voucher money you win will be calculated across the task and will be revealed at the end of the task.</p>
         <p>Throughout the task please try to maintain attention to the screen and to respond as quickly as you can using the keyboard. The trial will move on if you do not respond quickly enough.</p>
@@ -244,12 +250,12 @@
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function (data) {
             if (jsPsych.data.get().last(1).trials[0].correct == true) {
-                return '<p class="fixation_qm" style="font-size:60px;font-weight:bold;">CORRECT</p>'
+                return '<p class="outcome_qm" style="font-size:30px;font-weight:bold;">CORRECT</p>'
             } else if (jsPsych.data.get().last(1).trials[0].response == null) {
-                return '<p class="fixation_qm" style="font-size:60px;font-weight:bold;">MISSED</p>'
+                return '<p class="outcome_qm" style="font-size:30px;font-weight:bold;">MISSED</p>'
             }
             else {
-                return '<p class="fixation_qm" style="font-size:60px;font-weight:bold;">INCORRECT</p>'
+                return '<p class="outcome_qm" style="font-size:30px;font-weight:bold;">INCORRECT</p>'
             }
         },
         trial_duration: 1000,
@@ -320,7 +326,7 @@
         type: jsPsychHtmlKeyboardResponse,
         stimulus:`
         <p>Thank you for taking part. Based on your task performance you won an additional £5 in vouchers.</p> 
-        <p>Press any key to begin.</p>
+        <p>Press any key to continue.</p>
         `,
     };
 
