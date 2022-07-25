@@ -488,6 +488,9 @@
     };
 
 
+    // BLOCKS ORDER:
+    // Prac - neu_unc - pos_unc - neg_cer - neu_cer - neg_unc - pos_cer
+
     // START
     timeline.push(welcome);
 
@@ -522,15 +525,15 @@
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
-    // NEGATIVE WITH FEEDBACK
-    timeline.push(negative_block);
-    timeline.push(test_negative_with_feedback);
-    timeline.push(end_questions);
-    timeline.push(emotions_questions);
-
     // POSITIVE NO FEEDBACK
     timeline.push(positive_block);
     timeline.push(test_positive_without_feedback);
+    timeline.push(end_questions);
+    timeline.push(emotions_questions);
+
+    // NEGATIVE WITH FEEDBACK
+    timeline.push(negative_block);
+    timeline.push(test_negative_with_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
@@ -540,15 +543,15 @@
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
-    // POSITIVE WITH FEEDBACK
-    timeline.push(positive_block);
-    timeline.push(test_positive_with_feedback);
+    // NEGATIVE NO FEEDBACK
+    timeline.push(negative_block);
+    timeline.push(test_negative_without_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
-    // NEGATIVE WITHOUT FEEDBACK
-    timeline.push(negative_block);
-    timeline.push(test_negative_without_feedback);
+    // POSITIVE WITH FEEDBACK
+    timeline.push(positive_block);
+    timeline.push(test_positive_with_feedback);
     timeline.push(end_questions);
     timeline.push(emotions_questions);
 
